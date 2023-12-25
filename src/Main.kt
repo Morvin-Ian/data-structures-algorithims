@@ -1,7 +1,8 @@
 fun main() {
-    val stack = Stack<Int>()
-    stack.push(10)
-    stack.push(3)
-//    stack.pop()
-    println(stack.data.reversed())
+    val list = LinkedList<Int>()
+    list.push(3)
+    list.push(2)
+    list.push(1)
+
+    println(list)
 }

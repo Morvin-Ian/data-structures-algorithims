@@ -26,12 +26,36 @@ class LinkedList<T> {
         }
     }
 
+    // Adding a Node to the
     fun push(value: T) {
         head = Node(value = value, next = head)
         if (tail == null) {
             tail = head
         }
         size++
+    }
+    fun append(value:T){
+        if(isEmpty()){
+            push(value)
+        }
+        tail?.next = Node(value=value)
+        tail = tail?.next
+        size++
+    }
+
+    fun findNodeAt(index:Int): Node<T>? {
+        var currentNode = head
+        var count = 0
+
+        while (currentNode != null && count < index){
+            currentNode = currentNode.next
+            count++
+        }
+        return currentNode
+    }
+
+    fun insert(value: T, index: Int){
+        
     }
 }
 

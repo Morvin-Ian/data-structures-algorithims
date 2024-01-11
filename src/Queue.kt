@@ -4,7 +4,7 @@ interface QueueBluePrint<T:Any>{
     fun peek():T?
 }
 
-class Queue<T:Any>: QueueBluePrint<T>{
+open class Queue<T:Any>: QueueBluePrint<T>{
     val data = arrayListOf<T>()
     override fun dequeue():T?{
         return if(data.isEmpty()) null else data.removeAt(0)

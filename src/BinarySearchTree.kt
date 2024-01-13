@@ -36,8 +36,22 @@ class BST<T:Comparable<T>>{
          }
      }
 
-     fun isPresent(value: Int): Int? {
-        TODO("Not yet implemented")
+    fun contains(value: T): Boolean {
+        var current = root
+
+        while (true) {
+            if (current == null) {
+                break
+            } else if (current.data == value) {
+                return true
+            } else if (value < current.data) {
+                current = current.left
+            } else if (value > current.data) {
+                current = current.right
+            }
+        }
+
+        return false
     }
 
 }

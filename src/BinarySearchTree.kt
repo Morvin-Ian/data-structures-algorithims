@@ -36,22 +36,21 @@ class BST<T:Comparable<T>>{
          }
      }
 
-    fun contains(value: T): Boolean {
+    fun contains(value: T): List<*> {
         var current = root
 
         while (true) {
             if (current == null) {
                 break
             } else if (current.data == value) {
-                return true
+                return listOf(true, current.data)
             } else if (value < current.data) {
                 current = current.left
             } else if (value > current.data) {
                 current = current.right
             }
         }
-
-        return false
+        return listOf(false)
     }
 
 }

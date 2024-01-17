@@ -7,6 +7,5 @@ fun main() {
     binary.add(13)
     binary.add(19)
     binary.add(2)
-    println(binary.contains( 2))
-    println(binary.root?.right?.left?.right?.data)
+    println( traverseBreathFirst(binary))
 }

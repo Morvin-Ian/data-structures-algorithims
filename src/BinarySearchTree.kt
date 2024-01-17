@@ -53,6 +53,8 @@ class BST<T:Comparable<T>>{
         return listOf(false)
     }
 
+    fun isEmpty() = root == null
+
 }
 
 

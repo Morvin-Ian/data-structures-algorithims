@@ -16,8 +16,6 @@ open class Queue<T:Any>: QueueBluePrint<T>{
         return data.getOrNull(0)
     }
 
-    fun isEmpty() = data.isEmpty()
-
     fun isNotEmpty() = data.isNotEmpty()
 
 }

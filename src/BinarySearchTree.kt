@@ -1,4 +1,4 @@
-open class BinaryNode<T:Comparable<T>>(val data:T) {
+class BinaryNode<T:Comparable<T>>(val data:T) {
     var left:BinaryNode<T>? = null
     var right:BinaryNode<T>? = null
 }
@@ -23,34 +23,33 @@ class BST<T:Comparable<T>>{
                      current.left = newNode
                      return
                  }
+                 current = current.left!!
 
-                 current.left?.let { current = it }
              }else if( value > current.data){
                  if (current.right == null) {
                      current.right = newNode
                      return
                  }
-
-                 current.right?.let { current = it }
+                 current = current.right!!
              }
          }
      }
 
-    fun contains(value: T): List<*> {
+    fun contains(value: T): Boolean {
         var current = root
 
         while (true) {
             if (current == null) {
                 break
             } else if (current.data == value) {
-                return listOf(true, current.data)
+                return true
             } else if (value < current.data) {
                 current = current.left
             } else if (value > current.data) {
                 current = current.right
             }
         }
-        return listOf(false)
+        return false
     }
 
     fun isEmpty() = root == null

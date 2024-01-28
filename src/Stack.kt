@@ -1,31 +1,19 @@
-interface StackBluePrint <T:Any>{
-    fun push(element: T)
-    fun pop()
-    fun empty():Boolean
-    fun peek():T?
-}
 
-class Stack<T:Any>: StackBluePrint<T>{
+class Stack<T:Any>{
 
     val data = arrayListOf<T>()
+    val size get() = data.size
 
-    override fun push(element: T) {
+    fun push(element: T) {
         data.add(element)
     }
 
-    // Remove the last element
-    override fun pop() {
-        if(data.size > 0) {
-            data.removeAt(data.size-1)
-        }
-    }
+    fun pop() = if (data.isEmpty()) null else data.removeAt(data.lastIndex)
 
-    override fun empty():Boolean {
-        return data.isEmpty()
-    }
+    fun peek() = data.lastOrNull()
 
-    override fun peek():T?{
-        return data[data.size-1]
-    }
+    fun isEmpty() = data.isEmpty()
+
+    fun isNotEmpty() = data.isNotEmpty()
 
 }

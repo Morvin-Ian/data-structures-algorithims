@@ -1,4 +1,4 @@
-
+package data_structures
 class Stack<T:Any>{
 
     val data = arrayListOf<T>()

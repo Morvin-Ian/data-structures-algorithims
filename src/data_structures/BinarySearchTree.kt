@@ -1,6 +1,8 @@
+package data_structures
+
 class BinaryNode<T:Comparable<T>>(val data:T) {
-    var left:BinaryNode<T>? = null
-    var right:BinaryNode<T>? = null
+    var left: BinaryNode<T>? = null
+    var right: BinaryNode<T>? = null
 }
 
 class BST<T:Comparable<T>>{

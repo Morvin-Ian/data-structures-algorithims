@@ -1,3 +1,5 @@
+package data_structures
+
 private fun <T:Comparable<T>>traverseDepthFirstPreOrder(tree: BST<T>): List<T> {
     val result = mutableListOf<T>()
     val stack = Stack<BinaryNode<T>>()
